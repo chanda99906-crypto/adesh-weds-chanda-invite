@@ -8,57 +8,26 @@ const haldiImage = new URL("./assets/haldi.jpg", import.meta.url).href;
 const mehendiImage = new URL("./assets/mehandi.jpg", import.meta.url).href;
 const weddingImage = new URL("./assets/wedding.jpg", import.meta.url).href;
 const musicTrack = new URL("./assets/music.mp3", import.meta.url).href;
-const couplePhoto = new URL("./assets/adesh-chanda-couple.jpeg", import.meta.url).href;
-const handPhoto = new URL("./assets/couple-hand.jpeg", import.meta.url).href;
-const ringsOnePhoto = new URL("./assets/couple-rings-1.jpeg", import.meta.url).href;
-const ringsTwoPhoto = new URL("./assets/couple-rings-2.jpeg", import.meta.url).href;
-
-const memoryPhotos = [
-  {
-    title: "आदेश एवं चंदा",
-    caption: "साथ के वादे की एक शांत, सुंदर शुरुआत।",
-    image: couplePhoto,
-    position: "object-center",
-  },
-  {
-    title: "हाथों में वादा",
-    caption: "छोटी-सी पकड़ में उम्र भर का भरोसा।",
-    image: handPhoto,
-    position: "object-center",
-  },
-  {
-    title: "पवित्र अंगूठियां",
-    caption: "दो वृत्त, एक पावन आरंभ।",
-    image: ringsOnePhoto,
-    position: "object-center",
-  },
-  {
-    title: "सदा के करीब",
-    caption: "आज और हमेशा के बीच ठहरा हुआ एक पल।",
-    image: ringsTwoPhoto,
-    position: "object-center",
-  },
-];
 
 const eventImages = [
   {
     title: "हल्दी",
     date: "25 जून",
-    time: "हल्दी, हंसी और सुनहरे आशीर्वादों की एक शुभ सुबह।",
+    time: "हल्दी की पावन रस्म, स्नेहिल मुस्कानें और मंगल आशीर्वादों से सजी शुभ बेला।",
     image: haldiImage,
     offset: "pt-32",
   },
   {
     title: "मेहंदी",
     date: "26 जून",
-    time: "संगीत, मेहंदी और हर हथेली में सजी कहानियों की एक शाम।",
+    time: "मेहंदी की रंगत, गीतों की मधुरता और अपनों के संग हर्षोल्लास की सुहानी संध्या।",
     image: mehendiImage,
     offset: "pt-56",
   },
   {
     title: "विवाह",
     date: "27 जून",
-    time: "पवित्र वचन, परिवारों का संगम और जीवन भर के साथ की शुरुआत।",
+    time: "पवित्र फेरों, मंगल वचनों और दो परिवारों के शुभ मिलन का पावन अवसर।",
     image: weddingImage,
     offset: "pt-32",
   },
@@ -68,21 +37,21 @@ const eventDetails = [
   {
     title: "हल्दी समारोह",
     date: "गुरुवार, 25 जून · शाम 4:00 बजे",
-    address: ["B-3303 Spring View Floors, Sare Homes,", "Creasant Parc, Lal Kaun, Ghaziabad 201002"],
+    address: ["बी-3303, स्प्रिंग व्यू फ्लोर्स, सारे होम्स,", "क्रेसेंट पार्क, लाल कुआं, गाजियाबाद 201002"],
     accent: "gold",
     directions: "https://www.google.com/maps/search/?api=1&query=28.638583,77.480361",
   },
   {
     title: "मेहंदी संध्या",
     date: "शुक्रवार, 26 जून · शाम 6:00 बजे",
-    address: ["B-3303 Spring View Floors, Sare Homes,", "Creasant Parc, Lal Kaun, Ghaziabad 201002"],
+    address: ["बी-3303, स्प्रिंग व्यू फ्लोर्स, सारे होम्स,", "क्रेसेंट पार्क, लाल कुआं, गाजियाबाद 201002"],
     accent: "gold",
     directions: "https://www.google.com/maps/search/?api=1&query=28.638583,77.480361",
   },
   {
     title: "विवाह समारोह",
     date: "शनिवार, 27 जून · रात 8:30 बजे",
-    address: ["UK AURA by VR2H", "Main Gate, Wave City Marg, Sadiqpur, Kajipura, Ghaziabad, Uttar Pradesh 201015"],
+    address: ["UK AURA by VR2H", "मुख्य द्वार, वेव सिटी मार्ग, सादिकपुर, काजीपुरा, गाजियाबाद, उत्तर प्रदेश 201015"],
     accent: "maroon",
     directions: "https://www.google.com/maps/search/?api=1&query=UK%20AURA%20by%20VR2H%20Ghaziabad",
   },
@@ -158,7 +127,7 @@ function WhatsAppIcon() {
 function Eyebrow({ children }) {
   return h(
     "p",
-    { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.32em] text-blush" },
+    { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" },
     children
   );
 }
@@ -189,10 +158,10 @@ function Hero() {
       { className: "absolute inset-x-0 top-0 z-10 px-5 py-6 sm:px-8" },
       h(
         "nav",
-        { className: "mx-auto flex items-center justify-between font-label text-[0.65rem] font-medium uppercase tracking-[0.22em] text-espresso" },
-        h("a", { href: "#invitation", className: "transition-colors hover:text-gold" }, "कथा"),
-        h("span", { className: "font-display text-lg font-light italic normal-case tracking-normal text-maroon" }, "A & C"),
-        h("a", { href: "#rsvp", className: "transition-colors hover:text-gold" }, "आमंत्रण")
+        { className: "mx-auto flex items-center justify-between font-label text-[0.65rem] font-medium uppercase tracking-[0.05em] text-espresso" },
+        h("a", { href: "#invitation", className: "transition-colors hover:text-gold" }, "विवाह"),
+        h("span", { className: "font-display text-lg font-light italic normal-case tracking-normal text-maroon" }, "आ · च"),
+        h("a", { href: "#rsvp", className: "transition-colors hover:text-gold" }, "पुष्टि")
       )
     ),
     h(
@@ -278,7 +247,7 @@ function InvitationDetails() {
     h(
       "div",
       { className: "invitation-sequence px-4 py-8 text-center" },
-      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.32em] text-blush" }, "आपकी गरिमामयी उपस्थिति का सादर अनुरोध है"),
+      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" }, "सपरिवार सादर आमंत्रित हैं"),
       h(
         "div",
         { className: "mt-9 space-y-7" },
@@ -292,7 +261,7 @@ function InvitationDetails() {
           "div",
           { className: "flex items-center justify-center gap-4" },
           h("span", { className: "h-px w-12 bg-gold/45" }),
-          h("span", { className: "font-signature text-3xl text-gold-lt" }, "संग"),
+          h("span", { className: "font-signature text-3xl text-gold-lt" }, "के संग"),
           h("span", { className: "h-px w-12 bg-gold/45" })
         ),
         h(
@@ -306,11 +275,11 @@ function InvitationDetails() {
       h(
         "p",
         { className: "mx-auto mt-6 max-w-[18rem] font-body text-base italic leading-8 text-text-mid" },
-        "हम आपको सादर आमंत्रित करते हैं",
+        "आपकी स्नेहिल उपस्थिति एवं आशीर्वाद की अभिलाषा में",
         h("br"),
-        "हमारे जीवन साथ की इस शुभ शुरुआत के साक्षी बनें और आशीर्वाद दें।",
+        "कृपया पधारकर नवयुगल को अपना शुभाशीष प्रदान करें।",
         h("br"),
-        h("span", { className: "font-label text-[0.68rem] uppercase tracking-[0.2em] text-gold-lt" }, "— स्नेह एवं आशीर्वाद सहित")
+        h("span", { className: "font-label text-[0.68rem] uppercase tracking-[0.05em] text-gold-lt" }, "— सादर, परिवारजन")
       )
     )
   );
@@ -331,7 +300,7 @@ function Countdown() {
     h(
       "div",
       { className: "reveal text-cascade py-8 text-center" },
-      h("p", { className: "countdown-heading font-label text-[0.66rem] uppercase tracking-[0.42em] text-blush" }, "विवाह की शुभ घड़ी तक"),
+      h("p", { className: "countdown-heading font-label text-[0.66rem] uppercase tracking-[0.08em] text-blush" }, "शुभ विवाह की प्रतीक्षा"),
       h(
         "div",
         { className: "mt-8 flex items-baseline justify-center gap-1 font-display text-[3.2rem] font-normal leading-none text-maroon" },
@@ -346,78 +315,13 @@ function Countdown() {
       ),
       h(
         "div",
-        { className: "mx-auto mt-5 grid max-w-[19rem] grid-cols-4 text-center font-label text-[0.65rem] uppercase tracking-[0.28em] text-gold" },
+        { className: "mx-auto mt-5 grid max-w-[19rem] grid-cols-4 text-center font-label text-[0.65rem] uppercase tracking-[0.06em] text-gold" },
         h("span", null, "दिन"),
         h("span", null, "घंटे"),
         h("span", null, "मिनट"),
         h("span", null, "सेकंड")
       ),
-      h("p", { className: "mt-12 font-label text-[0.68rem] uppercase tracking-[0.26em] text-text-mid" }, "27 जून · शनिवार · रात 8:30 बजे")
-    )
-  );
-}
-
-function CoupleGallery() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activePhoto = memoryPhotos[activeIndex];
-
-  return h(
-    Section,
-    { id: "memories", className: "bg-ivory text-espresso" },
-    h(
-      "div",
-      { className: "reveal text-cascade text-center" },
-      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.42em] text-blush" }, "हमारी कुछ यादें"),
-      h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-maroon" }, "सदा के सफर से पहले के पल"),
-      h(
-        "p",
-        { className: "mx-auto mt-7 max-w-[20rem] font-body text-lg italic leading-8 text-text-mid" },
-        "कुछ यादें बहुत शांत होती हैं। वे थामे हुए हाथों, साझा मुस्कानों और एक-दूसरे को चुनने के विश्वास में बसती हैं।"
-      )
-    ),
-    h(
-      "div",
-      { className: "reveal mt-10 overflow-hidden rounded-[8px] border border-gold/25 bg-white shadow-luxury" },
-      h(
-        "div",
-        { className: "relative aspect-[4/4.35] overflow-hidden bg-ivory" },
-        h("img", {
-          key: activePhoto.image,
-          src: activePhoto.image,
-          alt: activePhoto.title,
-          className: `gallery-feature h-full w-full object-cover ${activePhoto.position}`,
-        }),
-        h("div", { className: "absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-espresso/70 via-espresso/20 to-transparent" }),
-        h(
-          "div",
-          { className: "absolute bottom-5 left-5 right-5 text-left text-ivory" },
-          h("p", { className: "font-display text-[1.65rem] font-light leading-none" }, activePhoto.title),
-          h("p", { className: "mt-1.5 font-body text-[0.95rem] italic leading-5 text-ivory" }, activePhoto.caption)
-        )
-      ),
-      h(
-        "div",
-        { className: "grid grid-cols-4 gap-2 p-3" },
-        memoryPhotos.map((photo, index) =>
-          h(
-            "button",
-            {
-              key: photo.title,
-              type: "button",
-              onClick: () => setActiveIndex(index),
-              className: `overflow-hidden rounded-[8px] border transition duration-300 ${
-                activeIndex === index ? "border-gold p-1" : "border-transparent opacity-70"
-              }`,
-              "aria-label": `Show ${photo.title}`,
-            },
-            h("img", {
-              src: photo.image,
-              alt: "",
-              className: `h-16 w-full rounded-[8px] object-cover ${photo.position}`,
-            })
-          )
-        )
-      )
+      h("p", { className: "mt-12 font-label text-[0.68rem] uppercase tracking-[0.06em] text-text-mid" }, "27 जून · शनिवार · रात 8:30 बजे")
     )
   );
 }
@@ -465,12 +369,12 @@ function Events() {
     h(
       "div",
       { className: "reveal text-cascade mx-auto max-w-2xl text-center" },
-      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.42em] text-gold" }, "तीन दिनों का उत्सव"),
-      h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-ivory" }, "कार्यक्रम एवं स्थल"),
+      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-gold" }, "मंगल उत्सव"),
+      h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-ivory" }, "विवाह कार्यक्रम एवं स्थल"),
       h(
         "p",
         { className: "mx-auto mt-8 max-w-[20rem] font-body text-lg leading-8 text-ivory" },
-        "आपकी उपस्थिति से हर रस्म और भी शुभ होगी, हर आशीर्वाद और निकट होगा, और यह संध्या सुनहरी याद बन जाएगी।"
+        "आपकी उपस्थिति से प्रत्येक रस्म में मंगलता, प्रत्येक क्षण में अपनापन और इस शुभ अवसर में स्मरणीय सौंदर्य जुड़ जाएगा।"
       )
     ),
     h(
@@ -486,7 +390,7 @@ function Events() {
           h(
             "div",
             { className: "flex flex-col gap-3" },
-            h("h3", { className: "font-label text-sm font-medium uppercase tracking-[0.24em] text-blush" }, event.title),
+            h("h3", { className: "font-label text-sm font-medium uppercase tracking-[0.06em] text-blush" }, event.title),
             h("p", { className: "font-body text-base text-gold-lt" }, event.date)
           ),
           h(
@@ -500,10 +404,10 @@ function Events() {
               href: event.directions,
               target: "_blank",
               rel: "noreferrer",
-              className: "mt-8 inline-flex items-center gap-2 border-b border-gold/55 pb-1 font-label text-[0.68rem] uppercase tracking-[0.24em] text-blush",
+              className: "mt-8 inline-flex items-center gap-2 border-b border-gold/55 pb-1 font-label text-[0.68rem] uppercase tracking-[0.06em] text-blush",
             },
             Icon(MapPin, "", 14),
-            "दिशा देखें"
+            "मार्ग देखें"
           )
         )
       )
@@ -512,7 +416,7 @@ function Events() {
 }
 
 function RSVP() {
-  const message = encodeURIComponent("नमस्ते, मैं आदेश एवं चंदा के विवाह समारोह में शामिल होने की पुष्टि करना चाहता/चाहती हूं।");
+  const message = encodeURIComponent("नमस्ते, आदेश एवं चंदा के शुभ विवाह समारोह में मेरी उपस्थिति की पुष्टि स्वीकार करें।");
 
   return h(
     Section,
@@ -521,18 +425,18 @@ function RSVP() {
       "div",
       { className: "reveal text-cascade mx-auto max-w-3xl rounded-[8px] border border-gold/35 px-5 py-10 text-center shadow-[0_18px_55px_rgba(44,24,16,0.06)]" },
       Icon(Heart, "mx-auto text-gold", 34),
-      h("h2", { className: "mt-6 font-display text-4xl font-light leading-tight text-maroon" }, "आपकी उपस्थिति ही हमारा सबसे बड़ा आशीर्वाद है।"),
-      h("p", { className: "mx-auto mt-6 max-w-2xl font-body text-lg leading-9 text-text-mid" }, "कृपया परिवार को अपनी उपस्थिति की सूचना दें, ताकि हर व्यवस्था प्रेम से पूरी की जा सके।"),
+      h("h2", { className: "mt-6 font-display text-4xl font-light leading-tight text-maroon" }, "आपका आशीर्वाद ही हमारा सौभाग्य है।"),
+      h("p", { className: "mx-auto mt-6 max-w-2xl font-body text-lg leading-9 text-text-mid" }, "कृपया अपनी उपस्थिति की पुष्टि कर हमें अनुग्रहित करें, ताकि स्वागत की प्रत्येक व्यवस्था स्नेहपूर्वक पूर्ण की जा सके।"),
       h(
         "a",
         {
           href: `https://wa.me/918076156686?text=${message}`,
           target: "_blank",
           rel: "noreferrer",
-          className: "mt-9 inline-flex items-center justify-center gap-3 rounded-[8px] bg-maroon px-8 py-4 font-label text-sm font-medium uppercase tracking-[0.18em] text-ivory shadow-luxury transition duration-300 hover:-translate-y-0.5 hover:bg-espresso",
+          className: "mt-9 inline-flex items-center justify-center gap-3 rounded-[8px] bg-maroon px-8 py-4 font-label text-sm font-medium uppercase tracking-[0.05em] text-ivory shadow-luxury transition duration-300 hover:-translate-y-0.5 hover:bg-espresso",
         },
         h(WhatsAppIcon),
-        "व्हाट्सऐप पर पुष्टि करें"
+        "व्हाट्सऐप द्वारा पुष्टि करें"
       )
     )
   );
@@ -550,7 +454,7 @@ function Footer() {
       h("span", { className: "font-label text-[0.68rem] leading-none text-[#c9a84c]/80" }, "★"),
       h("span", { className: "h-px flex-1 bg-[#c9a84c]/65" })
     ),
-    h("p", { className: "mx-auto mt-4 max-w-2xl font-body text-lg font-normal leading-8 text-text-mid" }, "परिवारों के आशीर्वाद के साथ, हम आपको पवित्र वचनों, प्रिय परंपराओं और आपकी उपस्थिति से उज्ज्वल होते प्रेम के इस उत्सव में सादर आमंत्रित करते हैं।")
+    h("p", { className: "mx-auto mt-4 max-w-2xl font-body text-lg font-normal leading-8 text-text-mid" }, "समस्त परिवार के आशीर्वाद सहित, हम आपको पवित्र वचनों, मंगल परंपराओं और प्रेम से सजे इस शुभ विवाह उत्सव में सादर आमंत्रित करते हैं।")
   );
 }
 
@@ -603,6 +507,10 @@ export default function App() {
     };
   }, []);
 
-  return h(React.Fragment, null, h(MusicPlayer), h(Hero), h("main", null, h(InvitationDetails), h(Countdown), h(CoupleGallery), h(EventImageSections), h(Events), h(RSVP)), h(Footer));
+  return h(React.Fragment, null, h(MusicPlayer), h(Hero), h("main", null, h(InvitationDetails), h(Countdown), h(EventImageSections), h(Events), h(RSVP)), h(Footer));
 }
+
+
+
+
 
