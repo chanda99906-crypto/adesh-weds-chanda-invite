@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="आदेश एवं चंदा के विवाह का प्रीमियम हिंदी आमंत्रण, 27 जून 2026, गाजियाबाद।"
+    />
+    <title>आदेश एवं चंदा | विवाह आमंत्रण</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ivory: "#FAF6EF",
+                gold: "#C9A84C",
+                "gold-lt": "#B8941F",
+                maroon: "#7A1B2A",
+                blush: "#9B2335",
+                "text-mid": "#5A3028",
+                espresso: "#2C1810",
+              },
+              fontFamily: {
+                display: ['"Cormorant Garamond"', "Georgia", "serif"],
+                label: ['"Cinzel"', "serif"],
+                body: ['"EB Garamond"', "Georgia", "serif"],
+              },
+              boxShadow: {
+                luxury: "0 24px 70px rgba(44, 24, 16, 0.12)",
+              },
+              keyframes: {
+                fadeUp: {
+                  "0%": { opacity: "0", transform: "translateY(22px)" },
+                  "100%": { opacity: "1", transform: "translateY(0)" },
+                },
+                slowZoom: {
+                  "0%": { transform: "scale(1)" },
+                  "100%": { transform: "scale(1.08)" },
+                },
+              },
+              animation: {
+                fadeUp: "fadeUp 900ms ease forwards",
+                slowZoom: "slowZoom 18s ease-out forwards",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.1.1",
+          "react-dom/client": "https://esm.sh/react-dom@19.1.1/client",
+          "lucide-react": "https://esm.sh/lucide-react@0.468.0?external=react"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
+
