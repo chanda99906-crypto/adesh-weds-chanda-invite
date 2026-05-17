@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Serif+Devanagari:wght@400;500;600&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amita:wght@400;700&family=Noto+Serif+Devanagari:wght@400;500;600&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap");
 
 :root {
   --ivory: #faf6ef;
@@ -53,7 +53,9 @@ a {
 }
 
 .font-signature {
-  font-family: "Alex Brush", "Cormorant Garamond", "Noto Serif Devanagari", Georgia, serif !important;
+  font-family: "Amita", "Noto Serif Devanagari", "Alex Brush", "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 700;
+  letter-spacing: 0 !important;
 }
 
 .text-gold-lt {
@@ -727,4 +729,5 @@ a {
     transform: none;
   }
 }
+
 
