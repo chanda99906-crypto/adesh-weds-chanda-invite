@@ -1,16 +1,44 @@
 ﻿import React, { useEffect, useMemo, useState } from "react";
-import { CalendarDays, Heart, MapPin, MessageCircle, Music, Sparkles, Volume2, VolumeX } from "lucide-react";
+import { Heart, MapPin, Volume2, VolumeX } from "lucide-react";
 
 const h = React.createElement;
 const weddingDate = new Date("2026-06-27T20:00:00+05:30");
 const heroImage = new URL("./assets/opening.jpg", import.meta.url).href;
-const coupleMainImage = new URL("./assets/couple-main.jpeg", import.meta.url).href;
-const coupleHandImage = new URL("./assets/couple-hand.jpeg", import.meta.url).href;
-const coupleRingImage = new URL("./assets/couple-rings-1.jpeg", import.meta.url).href;
 const haldiImage = new URL("./assets/haldi.jpg", import.meta.url).href;
 const mehendiImage = new URL("./assets/mehandi.jpg", import.meta.url).href;
 const weddingImage = new URL("./assets/wedding.jpg", import.meta.url).href;
 const musicTrack = new URL("./assets/music.mp3", import.meta.url).href;
+const couplePhoto = new URL("./assets/couple-main.jpeg", import.meta.url).href;
+const handPhoto = new URL("./assets/couple-hand.jpeg", import.meta.url).href;
+const ringsOnePhoto = new URL("./assets/couple-rings-1.jpeg", import.meta.url).href;
+const ringsTwoPhoto = new URL("./assets/couple-rings-2.jpeg", import.meta.url).href;
+
+const memoryPhotos = [
+  {
+    title: "आदेश एवं चंदा",
+    caption: "जीवन भर के साथ से पहले की शांत, सुनहरी खुशी।",
+    image: couplePhoto,
+    position: "object-center",
+  },
+  {
+    title: "साथ का स्पर्श",
+    caption: "छोटे से स्पर्श में समाया एक सुंदर वचन।",
+    image: handPhoto,
+    position: "object-center",
+  },
+  {
+    title: "अंगूठियों का वचन",
+    caption: "दो वृत्त, एक पावन शुरुआत।",
+    image: ringsOnePhoto,
+    position: "object-center",
+  },
+  {
+    title: "हमेशा के करीब",
+    caption: "आज और सदा के बीच ठहरा हुआ एक कोमल क्षण।",
+    image: ringsTwoPhoto,
+    position: "object-center",
+  },
+];
 
 const eventImages = [
   {
@@ -41,21 +69,18 @@ const eventDetails = [
     title: "हल्दी समारोह",
     date: "गुरुवार, 25 जून · सुबह 11:00 बजे",
     address: ["172/1, आर्य नगर, ब्लॉक-2,", "शिव मंदिर के पास, देहरादून, उत्तराखंड"],
-    accent: "gold",
     directions: "https://www.google.com/maps/search/?api=1&query=30.340556,78.063806",
   },
   {
     title: "मेहंदी संध्या",
     date: "गुरुवार, 25 जून · शाम 4:00 बजे",
     address: ["172/1, आर्य नगर, ब्लॉक-2,", "शिव मंदिर के पास, देहरादून, उत्तराखंड"],
-    accent: "gold",
     directions: "https://www.google.com/maps/search/?api=1&query=30.340556,78.063806",
   },
   {
     title: "विवाह समारोह",
     date: "शनिवार, 27 जून · रात 8:00 बजे",
     address: ["आनंद भवन", "4, ओल्ड सर्वे रोड, करनपुर,", "देहरादून, उत्तराखंड 248001"],
-    accent: "green",
     directions: "https://share.google/md5em3FuLxj9JEs7O",
   },
 ];
@@ -92,27 +117,9 @@ function FlyingBird({ className = "" }) {
     h(
       "svg",
       { viewBox: "0 0 96 48", fill: "none", xmlns: "http://www.w3.org/2000/svg", "aria-hidden": "true" },
-      h("path", {
-        className: "bird-left-wing",
-        d: "M47 27C33 12 19 12 5 26C23 22 35 26 47 34Z",
-        fill: "currentColor",
-        opacity: "0.84",
-      }),
-      h("path", {
-        className: "bird-right-wing",
-        d: "M49 27C63 12 77 12 91 26C73 22 61 26 49 34Z",
-        fill: "currentColor",
-        opacity: "0.88",
-      }),
-      h("ellipse", {
-        className: "bird-body",
-        cx: "48",
-        cy: "29",
-        rx: "8.5",
-        ry: "4.5",
-        fill: "#C9A84C",
-        opacity: "0.94",
-      })
+      h("path", { className: "bird-left-wing", d: "M47 27C33 12 19 12 5 26C23 22 35 26 47 34Z", fill: "currentColor", opacity: "0.84" }),
+      h("path", { className: "bird-right-wing", d: "M49 27C63 12 77 12 91 26C73 22 61 26 49 34Z", fill: "currentColor", opacity: "0.88" }),
+      h("ellipse", { className: "bird-body", cx: "48", cy: "29", rx: "8.5", ry: "4.5", fill: "#C9A84C", opacity: "0.94" })
     )
   );
 }
@@ -128,52 +135,24 @@ function WhatsAppIcon() {
 }
 
 function Eyebrow({ children }) {
-  return h(
-    "p",
-    { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" },
-    children
-  );
+  return h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.32em] text-blush" }, children);
 }
 
 function Section({ id, children, className = "" }) {
-  return h(
-    "section",
-    { id, className: `relative px-5 py-16 ${className}` },
-    h("div", { className: "mx-auto w-full" }, children)
-  );
+  return h("section", { id, className: `relative px-5 py-16 ${className}` }, h("div", { className: "mx-auto w-full" }, children));
 }
 
 function Hero() {
   return h(
     "header",
     { className: "relative min-h-[100svh] overflow-hidden bg-ivory text-espresso" },
-    h("img", {
-      src: heroImage,
-      alt: "आदेश और चंदा के विवाह आमंत्रण की आरंभिक कलाकृति",
-      className: "opening-image absolute inset-0 h-full w-full object-cover object-center",
-    }),
+    h("img", { src: heroImage, alt: "आदेश और चंदा के विवाह आमंत्रण की आरंभिक कलाकृति", className: "opening-image absolute inset-0 h-full w-full object-cover object-center" }),
     h("div", { className: "absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-ivory via-ivory/55 to-transparent" }),
     h(FlyingBird, { className: "-left-28 top-[16%]" }),
     h(FlyingBird, { className: "is-second -left-28 top-[23%] scale-75 opacity-80" }),
     h(FlyingBird, { className: "is-third -left-28 top-[11%] scale-90 opacity-85" }),
-    h(
-      "div",
-      { className: "absolute inset-x-0 top-0 z-10 px-5 py-6 sm:px-8" },
-      h(
-        "nav",
-        { className: "mx-auto text-center font-label text-[0.72rem] font-medium tracking-[0.08em] text-maroon" },
-        "॥ ॐ गणेशाय नमः ॥"
-      )
-    ),
-    h(
-      "div",
-      { className: "absolute inset-x-0 bottom-12 z-10 px-6 text-center" },
-      h(
-        "p",
-        { className: "opening-signature gold-gradient-text inline-block px-2 py-2 font-signature text-4xl font-semibold leading-[1.35] tracking-wide" },
-        "आदेश एवं चंदा"
-      )
-    ),
+    h("div", { className: "absolute inset-x-0 top-0 z-10 px-5 py-6 sm:px-8" }, h("nav", { className: "mx-auto flex items-center justify-center font-body text-base font-normal tracking-[0.03em] text-maroon" }, h("span", null, "॥ ॐ गणेशाय नमः ॥"))),
+    h("div", { className: "absolute inset-x-0 bottom-12 z-10 px-6 text-center" }, h("p", { className: "opening-signature gold-gradient-text inline-block px-2 py-2 font-signature text-4xl font-semibold leading-[1.35] tracking-wide" }, "आदेश एवं चंदा")),
     h("div", { className: "scroll-cue absolute bottom-3 left-1/2 z-10 h-10 w-px bg-gradient-to-b from-maroon/75 to-transparent" })
   );
 }
@@ -185,19 +164,13 @@ function MusicPlayer() {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return undefined;
-
     audio.volume = 0.45;
     const tryPlay = () => {
-      audio
-        .play()
-        .then(() => setIsPlaying(true))
-        .catch(() => setIsPlaying(false));
+      audio.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
     };
-
     tryPlay();
     window.addEventListener("pointerdown", tryPlay, { once: true });
     window.addEventListener("keydown", tryPlay, { once: true });
-
     return () => {
       window.removeEventListener("pointerdown", tryPlay);
       window.removeEventListener("keydown", tryPlay);
@@ -207,10 +180,8 @@ function MusicPlayer() {
   const toggleMusic = () => {
     const audio = audioRef.current;
     if (!audio) return;
-
-    if (audio.paused) {
-      audio.play().then(() => setIsPlaying(true));
-    } else {
+    if (audio.paused) audio.play().then(() => setIsPlaying(true));
+    else {
       audio.pause();
       setIsPlaying(false);
     }
@@ -219,25 +190,8 @@ function MusicPlayer() {
   return h(
     React.Fragment,
     null,
-    h("audio", {
-      ref: audioRef,
-      src: musicTrack,
-      autoPlay: true,
-      loop: true,
-      playsInline: true,
-      preload: "auto",
-    }),
-    h(
-      "button",
-      {
-        type: "button",
-        onClick: toggleMusic,
-        className:
-          "fixed bottom-5 right-5 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/35 bg-ivory/70 text-maroon/70 shadow-[0_10px_30px_rgba(44,24,16,0.08)] backdrop-blur-md transition duration-300 hover:bg-ivory hover:text-maroon",
-        "aria-label": isPlaying ? "संगीत रोकें" : "संगीत चलाएं",
-      },
-      isPlaying ? Icon(Volume2, "", 17) : Icon(VolumeX, "", 17)
-    )
+    h("audio", { ref: audioRef, src: musicTrack, autoPlay: true, loop: true, playsInline: true, preload: "auto" }),
+    h("button", { type: "button", onClick: toggleMusic, className: "fixed bottom-5 right-5 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/35 bg-ivory/70 text-maroon/70 shadow-[0_10px_30px_rgba(20,43,32,0.08)] backdrop-blur-md transition duration-300 hover:bg-ivory hover:text-maroon", "aria-label": isPlaying ? "संगीत रोकें" : "संगीत चलाएं" }, isPlaying ? Icon(Volume2, "", 17) : Icon(VolumeX, "", 17))
   );
 }
 
@@ -248,110 +202,50 @@ function InvitationDetails() {
     h(
       "div",
       { className: "invitation-sequence px-4 py-8 text-center" },
-      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" }, "सपरिवार सादर आमंत्रित हैं"),
+      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.18em] text-blush" }, "सपरिवार सादर आमंत्रित हैं"),
       h(
         "div",
         { className: "mt-9 space-y-7" },
-        h(
-          "div",
-          null,
-          h("p", { className: "gold-gradient-text font-signature text-5xl font-semibold leading-[1.15] drop-shadow-sm" }, "आदेश"),
-          h("p", { className: "mt-2 font-body text-sm leading-7 text-text-mid" }, "सुपुत्र", h("br"), "श्री शिव किशोर चौरसिया एवं श्रीमती माया चौरसिया")
-        ),
-        h(
-          "div",
-          { className: "flex items-center justify-center gap-4" },
-          h("span", { className: "h-px w-12 bg-gold/45" }),
-          h("span", { className: "font-display text-3xl italic text-gold-lt" }, "के संग"),
-          h("span", { className: "h-px w-12 bg-gold/45" })
-        ),
-        h(
-          "div",
-          null,
-          h("p", { className: "gold-gradient-text font-signature text-5xl font-semibold leading-[1.15] drop-shadow-sm" }, "चंदा"),
-          h("p", { className: "mt-2 font-body text-sm leading-7 text-text-mid" }, "सुपुत्री", h("br"), "श्री विजय कुमार चौरसिया एवं श्रीमती सुशीला चौरसिया"),
-          h("span", { className: "mx-auto mt-7 block h-px w-24 bg-[#c9a84c]/55" })
-        )
+        h("div", null, h("p", { className: "gold-gradient-text font-signature text-5xl font-semibold leading-[1.15]" }, "आदेश"), h("p", { className: "mt-2 font-body text-sm leading-7 text-text-mid" }, "सुपुत्र", h("br"), "श्री शिव किशोर चौरसिया एवं श्रीमती माया चौरसिया")),
+        h("div", { className: "flex items-center justify-center gap-4" }, h("span", { className: "h-px w-12 bg-gold/45" }), h("span", { className: "font-signature text-3xl text-gold-lt" }, "के संग"), h("span", { className: "h-px w-12 bg-gold/45" })),
+        h("div", null, h("p", { className: "gold-gradient-text font-signature text-5xl font-semibold leading-[1.15]" }, "चंदा"), h("p", { className: "mt-2 font-body text-sm leading-7 text-text-mid" }, "सुपुत्री", h("br"), "श्री विजय कुमार चौरसिया एवं श्रीमती सुशीला चौरसिया"), h("span", { className: "mx-auto mt-7 block h-px w-24 bg-[#c9a84c]/55" }))
       ),
-      h(
-        "p",
-        { className: "mx-auto mt-6 max-w-[18rem] font-body text-base italic leading-8 text-text-mid" },
-        "आपकी स्नेहिल उपस्थिति एवं आशीर्वाद की अभिलाषा में",
-        h("br"),
-        "कृपया पधारकर नवयुगल को अपना शुभाशीष प्रदान करें।",
-        h("br"),
-        h("span", { className: "font-label text-[0.68rem] uppercase tracking-[0.05em] text-gold-lt" }, "— सादर, परिवारजन")
-      )
+      h("p", { className: "mx-auto mt-6 max-w-[18rem] font-body text-base italic leading-8 text-text-mid" }, "आपकी स्नेहिल उपस्थिति एवं आशीर्वाद की अभिलाषा में", h("br"), "कृपया पधारकर नवयुगल को अपना शुभाशीष प्रदान करें।", h("br"), h("span", { className: "font-label text-[0.68rem] uppercase tracking-[0.14em] text-gold-lt" }, "— सादर, परिवारजन"))
     )
   );
 }
 
 function Countdown() {
   const countdown = useCountdown(weddingDate);
-  const numbers = [
-    String(countdown.days).padStart(2, "0"),
-    String(countdown.hours).padStart(2, "0"),
-    String(countdown.minutes).padStart(2, "0"),
-    String(countdown.seconds).padStart(2, "0"),
-  ];
+  const numbers = [String(countdown.days).padStart(2, "0"), String(countdown.hours).padStart(2, "0"), String(countdown.minutes).padStart(2, "0"), String(countdown.seconds).padStart(2, "0")];
 
   return h(
     Section,
-    { id: "countdown", className: "bg-[#f7f1e8] text-espresso" },
+    { id: "countdown", className: "bg-maroon text-ivory" },
     h(
       "div",
       { className: "reveal text-cascade py-8 text-center" },
-      h("p", { className: "countdown-heading font-label text-[0.66rem] uppercase tracking-[0.08em] text-blush" }, "शुभ विवाह की प्रतीक्षा"),
-      h(
-        "div",
-        { className: "mt-8 flex items-baseline justify-center gap-1 font-display text-[3.2rem] font-normal leading-none text-maroon" },
-        numbers.map((value, index) =>
-          h(
-            React.Fragment,
-            { key: index },
-            h("span", { className: "min-w-[3.9rem] tabular-nums" }, value),
-            index < numbers.length - 1 ? h("span", { className: "text-3xl text-gold" }, ":") : null
-          )
-        )
-      ),
-      h(
-        "div",
-        { className: "mx-auto mt-5 grid max-w-[19rem] grid-cols-4 text-center font-label text-[0.65rem] uppercase tracking-[0.06em] text-gold" },
-        h("span", null, "दिन"),
-        h("span", null, "घंटे"),
-        h("span", null, "मिनट"),
-        h("span", null, "सेकंड")
-      ),
-      h("p", { className: "mt-12 font-label text-[0.68rem] uppercase tracking-[0.06em] text-text-mid" }, "27 जून · शनिवार · रात 8:00 बजे")
+      h("p", { className: "countdown-heading font-label text-[0.66rem] uppercase tracking-[0.28em] text-gold" }, "शुभ विवाह की प्रतीक्षा"),
+      h("div", { className: "mt-8 flex items-baseline justify-center gap-1.5 font-display text-[2.95rem] font-medium leading-none tracking-[0.02em] text-[#FFF9EF] drop-shadow-[0_2px_12px_rgba(20,43,32,0.18)]" }, numbers.map((value, index) => h(React.Fragment, { key: index }, h("span", { className: "min-w-[3.65rem] tabular-nums" }, value), index < numbers.length - 1 ? h("span", { className: "text-3xl text-gold" }, ":") : null))),
+      h("div", { className: "mx-auto mt-5 grid max-w-[19rem] grid-cols-4 text-center font-label text-[0.65rem] uppercase tracking-[0.2em] text-gold" }, h("span", null, "दिन"), h("span", null, "घंटे"), h("span", null, "मिनट"), h("span", null, "सेकंड")),
+      h("p", { className: "mt-12 font-label text-[0.68rem] uppercase tracking-[0.16em] text-[#FFF9EF]" }, "27 जून · शनिवार · रात 8:00 बजे")
     )
   );
 }
 
 function CoupleGallery() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activePhoto = memoryPhotos[activeIndex];
+
   return h(
     Section,
-    { id: "story", className: "bg-ivory text-espresso" },
+    { id: "memories", className: "bg-ivory text-espresso" },
+    h("div", { className: "reveal text-cascade text-center" }, h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.28em] text-blush" }, "स्मृतियों की झलक"), h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-maroon" }, "हमेशा से पहले के पल"), h("p", { className: "mx-auto mt-7 max-w-[20rem] font-body text-lg italic leading-8 text-text-mid" }, "कुछ स्मृतियां शोर नहीं करतीं। वे हाथों की गरमाहट, मुस्कान की कोमलता और एक-दूसरे को चुनने के विश्वास में रहती हैं।")),
     h(
       "div",
-      { className: "reveal text-cascade text-center" },
-      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" }, "स्मृतियों की झलक"),
-      h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-maroon" }, "प्रेम, विश्वास और एक नई शुरुआत"),
-      h("p", { className: "mx-auto mt-6 max-w-[21rem] font-body text-lg leading-8 text-text-mid" }, "दो परिवारों के आशीर्वाद के बीच, यह साथ अब जीवन भर की सुंदर प्रतिज्ञा बनने जा रहा है।"),
-      h(
-        "div",
-        { className: "mx-auto mt-10 grid max-w-[390px] gap-4" },
-        h("img", {
-          src: coupleMainImage,
-          alt: "आदेश एवं चंदा",
-          className: "gallery-feature h-[clamp(340px,62svh,520px)] w-full rounded-[8px] object-cover object-center shadow-luxury",
-        }),
-        h(
-          "div",
-          { className: "grid grid-cols-2 gap-4" },
-          h("img", { src: coupleHandImage, alt: "युगल के हाथ", className: "h-40 w-full rounded-[8px] object-cover object-center shadow-[0_14px_35px_rgba(20,43,32,0.12)]" }),
-          h("img", { src: coupleRingImage, alt: "अंगूठियों की स्मृति", className: "h-40 w-full rounded-[8px] object-cover object-center shadow-[0_14px_35px_rgba(20,43,32,0.12)]" })
-        )
-      )
+      { className: "reveal mt-10 overflow-hidden rounded-[8px] border border-gold/25 bg-white shadow-luxury" },
+      h("div", { className: "relative h-[clamp(340px,62svh,520px)] overflow-hidden bg-ivory" }, h("img", { key: activePhoto.image, src: activePhoto.image, alt: activePhoto.title, className: `gallery-feature h-full w-full object-cover ${activePhoto.position}` }), h("div", { className: "absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-espresso/70 via-espresso/20 to-transparent" }), h("div", { className: "absolute bottom-5 left-5 right-5 text-left text-ivory" }, h("p", { className: "font-display text-[1.65rem] font-light leading-none" }, activePhoto.title), h("p", { className: "mt-1.5 font-body text-[0.95rem] italic leading-5 text-ivory" }, activePhoto.caption))),
+      h("div", { className: "grid grid-cols-4 gap-2 p-3" }, memoryPhotos.map((photo, index) => h("button", { key: photo.title, type: "button", onClick: () => setActiveIndex(index), className: `overflow-hidden rounded-[8px] border transition duration-300 ${activeIndex === index ? "border-gold p-1" : "border-transparent opacity-70"}`, "aria-label": `चित्र देखें: ${photo.title}` }, h("img", { src: photo.image, alt: "", className: `h-16 w-full rounded-[8px] object-cover ${photo.position}` }))))
     )
   );
 }
@@ -360,35 +254,7 @@ function EventImageSections() {
   return h(
     Section,
     { id: "celebrations", className: "bg-ivory text-espresso" },
-    h(
-      "div",
-      { className: "grid gap-5" },
-      eventImages.map((event) => {
-        return h(
-          "article",
-          {
-            key: event.title,
-            className:
-              "relative mx-auto h-[680px] max-w-[390px] overflow-hidden rounded-[8px] border border-gold/25 bg-ivory shadow-luxury",
-          },
-          h("img", {
-            src: event.image,
-            alt: `${event.title} celebration artwork`,
-            className:
-              "absolute inset-0 h-full w-full object-cover object-center",
-          }),
-          h("div", { className: "absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-ivory/95 via-ivory/72 to-transparent" }),
-          h(
-            "div",
-            { className: `relative z-10 px-7 text-center ${event.offset}` },
-            h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" }, event.date),
-            h("h3", { className: "mt-2 font-display text-5xl font-light leading-none text-maroon" }, event.title),
-            h("div", { className: "mx-auto mt-3 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" }),
-            h("p", { className: "mx-auto mt-2 max-w-[15rem] font-body text-lg italic leading-6 text-text-mid" }, event.time)
-          )
-        );
-      })
-    )
+    h("div", { className: "mx-auto grid max-w-[390px] gap-5" }, eventImages.map((event) => h("article", { key: event.title, className: "relative h-[680px] overflow-hidden rounded-[8px] border border-gold/25 bg-ivory shadow-luxury" }, h("img", { src: event.image, alt: `${event.title} celebration artwork`, className: "absolute inset-0 h-full w-full object-cover object-center" }), h("div", { className: "absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-ivory/95 via-ivory/72 to-transparent" }), h("div", { className: `relative z-10 px-7 text-center ${event.offset}` }, h(Eyebrow, null, event.date), h("h3", { className: "mt-2 font-display text-5xl font-light leading-none text-maroon" }, event.title), h("div", { className: "mx-auto mt-3 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" }), h("p", { className: "mx-auto mt-0 max-w-[15rem] font-body text-lg italic leading-6 text-text-mid" }, event.time)))))
   );
 }
 
@@ -396,52 +262,8 @@ function Events() {
   return h(
     Section,
     { id: "events", className: "bg-maroon text-ivory" },
-    h(
-      "div",
-      { className: "reveal text-cascade mx-auto max-w-2xl text-center" },
-      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-gold" }, "मंगल उत्सव"),
-      h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-ivory" }, "विवाह कार्यक्रम एवं स्थल"),
-      h(
-        "p",
-        { className: "mx-auto mt-8 max-w-[20rem] font-body text-lg leading-8 text-ivory" },
-        "आपकी उपस्थिति से प्रत्येक रस्म में मंगलता, प्रत्येक क्षण में अपनापन और इस शुभ अवसर में स्मरणीय सौंदर्य जुड़ जाएगा।"
-      )
-    ),
-    h(
-      "div",
-      { className: "reveal-stagger mt-12 grid gap-5" },
-      eventDetails.map((event) =>
-        h(
-          "article",
-          {
-            key: event.title,
-            className: "rounded-[8px] border border-[#c9a84c]/15 border-l-2 border-l-[#c9a84c] bg-[#FAF6EF] px-7 py-8 text-left shadow-[0_18px_45px_rgba(44,24,16,0.08)]",
-          },
-          h(
-            "div",
-            { className: "flex flex-col gap-3" },
-            h("h3", { className: "font-label text-sm font-medium uppercase tracking-[0.06em] text-blush" }, event.title),
-            h("p", { className: "font-body text-base text-gold-lt" }, event.date)
-          ),
-          h(
-            "div",
-            { className: "mt-6 space-y-2.5 font-body text-lg leading-8 text-text-mid" },
-            event.address.map((line) => h("p", { key: line }, line))
-          ),
-          h(
-            "a",
-            {
-              href: event.directions,
-              target: "_blank",
-              rel: "noreferrer",
-              className: "mt-8 inline-flex items-center gap-2 border-b border-gold/55 pb-1 font-label text-[0.68rem] uppercase tracking-[0.06em] text-blush",
-            },
-            Icon(MapPin, "", 14),
-            "मार्ग देखें"
-          )
-        )
-      )
-    )
+    h("div", { className: "reveal text-cascade mx-auto max-w-2xl text-center" }, h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.28em] text-gold" }, "मंगल उत्सव"), h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-ivory" }, "विवाह कार्यक्रम एवं स्थल"), h("p", { className: "mx-auto mt-8 max-w-[20rem] font-body text-lg leading-8 text-ivory" }, "जहां हर रस्म गरिमा से सजेगी, हर आशीर्वाद प्रेम से जुड़ेगा, और यह शुभ संध्या सुनहरी स्मृति बन जाएगी।")),
+    h("div", { className: "reveal-stagger mt-12 grid gap-5" }, eventDetails.map((event) => h("article", { key: event.title, className: "rounded-[8px] border border-[#c9a84c]/15 border-l-2 border-l-[#c9a84c] bg-[#FAF6EF] px-7 py-8 text-left shadow-[0_18px_45px_rgba(20,43,32,0.08)]" }, h("div", { className: "flex flex-col gap-3" }, h("h3", { className: "font-label text-sm font-medium uppercase tracking-[0.2em] text-blush" }, event.title), h("p", { className: "font-body text-base text-gold-lt" }, event.date)), h("div", { className: "mt-6 space-y-2.5 font-body text-lg leading-8 text-text-mid" }, event.address.map((line) => h("p", { key: line }, line))), h("a", { href: event.directions, target: "_blank", rel: "noreferrer", className: "mt-8 inline-flex items-center gap-2 border-b border-gold/55 pb-1 font-label text-[0.68rem] uppercase tracking-[0.2em] text-blush" }, Icon(MapPin, "", 14), "मार्ग देखें"))))
   );
 }
 
@@ -451,24 +273,7 @@ function RSVP() {
   return h(
     Section,
     { id: "rsvp", className: "bg-ivory text-espresso" },
-    h(
-      "div",
-      { className: "reveal text-cascade mx-auto max-w-3xl rounded-[8px] border border-gold/35 px-5 py-10 text-center shadow-[0_18px_55px_rgba(44,24,16,0.06)]" },
-      Icon(Heart, "mx-auto text-gold", 34),
-      h("h2", { className: "mt-6 font-display text-4xl font-light leading-tight text-maroon" }, "आपका आशीर्वाद ही हमारा सौभाग्य है।"),
-      h("p", { className: "mx-auto mt-6 max-w-2xl font-body text-lg leading-9 text-text-mid" }, "कृपया अपनी उपस्थिति की पुष्टि कर हमें अनुग्रहित करें, ताकि स्वागत की प्रत्येक व्यवस्था स्नेहपूर्वक पूर्ण की जा सके।"),
-      h(
-        "a",
-        {
-          href: `https://wa.me/917030582940?text=${message}`,
-          target: "_blank",
-          rel: "noreferrer",
-          className: "mt-9 inline-flex items-center justify-center gap-3 rounded-[8px] bg-maroon px-8 py-4 font-label text-sm font-medium uppercase tracking-[0.05em] text-ivory shadow-luxury transition duration-300 hover:-translate-y-0.5 hover:bg-espresso",
-        },
-        h(WhatsAppIcon),
-        "व्हाट्सऐप द्वारा पुष्टि करें"
-      )
-    )
+    h("div", { className: "reveal text-cascade mx-auto max-w-3xl rounded-[8px] border border-gold/35 px-5 py-10 text-center shadow-[0_18px_55px_rgba(20,43,32,0.06)]" }, Icon(Heart, "mx-auto text-gold", 34), h("h2", { className: "mt-6 font-display text-4xl font-light leading-tight text-maroon" }, "आपका आशीर्वाद ही हमारा सौभाग्य है।"), h("p", { className: "mx-auto mt-6 max-w-2xl font-body text-lg leading-9 text-text-mid" }, "कृपया अपनी उपस्थिति की पुष्टि कर हमें अनुग्रहित करें, ताकि स्वागत की प्रत्येक व्यवस्था स्नेहपूर्वक पूर्ण की जा सके।"), h("a", { href: `https://wa.me/917030582940?text=${message}`, target: "_blank", rel: "noreferrer", className: "mt-9 inline-flex items-center justify-center gap-3 rounded-[8px] bg-maroon px-8 py-4 font-label text-sm font-medium uppercase tracking-[0.18em] text-ivory shadow-luxury transition duration-300 hover:-translate-y-0.5 hover:bg-espresso" }, h(WhatsAppIcon), "व्हाट्सऐप द्वारा पुष्टि करें"))
   );
 }
 
@@ -477,13 +282,7 @@ function Footer() {
     "footer",
     { className: "text-cascade bg-ivory px-5 py-12 text-center sm:px-8" },
     h("p", { className: "gold-gradient-text font-signature text-4xl font-semibold leading-[1.2]" }, "आदेश एवं चंदा"),
-    h(
-      "div",
-      { className: "mx-auto mt-4 flex w-44 items-center justify-center gap-3 text-gold" },
-      h("span", { className: "h-px flex-1 bg-[#c9a84c]/65" }),
-      h("span", { className: "font-label text-[0.68rem] leading-none text-[#c9a84c]/80" }, "★"),
-      h("span", { className: "h-px flex-1 bg-[#c9a84c]/65" })
-    ),
+    h("div", { className: "mx-auto mt-4 flex w-44 items-center justify-center gap-3 text-gold" }, h("span", { className: "h-px flex-1 bg-[#c9a84c]/65" }), h("span", { className: "font-label text-[0.68rem] leading-none text-[#c9a84c]/80" }, "★"), h("span", { className: "h-px flex-1 bg-[#c9a84c]/65" })),
     h("p", { className: "mx-auto mt-4 max-w-2xl font-body text-lg font-normal leading-8 text-text-mid" }, "समस्त परिवार के आशीर्वाद सहित, हम आपको पवित्र वचनों, मंगल परंपराओं और प्रेम से सजे इस शुभ विवाह उत्सव में सादर आमंत्रित करते हैं।")
   );
 }
@@ -496,7 +295,6 @@ export default function App() {
       const target = document.querySelector(window.location.hash);
       if (target) target.scrollIntoView({ block: "start" });
     };
-
     const markVisibleTargets = () => {
       targets.forEach((item) => {
         const rect = item.getBoundingClientRect();
@@ -508,16 +306,7 @@ export default function App() {
       scrollToHash();
       markVisibleTargets();
     };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("is-visible");
-        });
-      },
-      { threshold: 0.18 }
-    );
-
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("is-visible"); }), { threshold: 0.18 });
     targets.forEach((item) => observer.observe(item));
     window.requestAnimationFrame(() => {
       scrollToHash();
@@ -529,7 +318,6 @@ export default function App() {
     }, 250);
     window.addEventListener("hashchange", handleHashChange);
     window.addEventListener("scroll", markVisibleTargets, { passive: true });
-
     return () => {
       observer.disconnect();
       window.removeEventListener("hashchange", handleHashChange);
@@ -539,15 +327,3 @@ export default function App() {
 
   return h(React.Fragment, null, h(MusicPlayer), h(Hero), h("main", null, h(InvitationDetails), h(Countdown), h(CoupleGallery), h(EventImageSections), h(Events), h(RSVP)), h(Footer));
 }
-
-
-
-
-
-
-
-
-
-
-
-

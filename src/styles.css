@@ -1,12 +1,12 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Serif+Devanagari:wght@400;500;600&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
-`r`n
+﻿@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Serif+Devanagari:wght@400;500;600&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap");
+
 :root {
   --ivory: #faf6ef;
-  --burgundy: #245B3A;
-  --burgundy-dk: #142B20;
+  --burgundy: #245b3a;
+  --burgundy-dk: #142b20;
   --gold: #c9a84c;
   --gold-lt: #b8941f;
-  --blush: #3F7450;
+  --blush: #3f7450;
   --text-mid: #678171;
   color: var(--text-mid);
   background: #faf6ef;
@@ -53,10 +53,9 @@ a {
 }
 
 .font-signature {
-  font-family: "Alex Brush", "Noto Serif Devanagari", "Cormorant Garamond", Georgia, serif !important;
-  font-weight: 600;
+  font-family: "Alex Brush", "Cormorant Garamond", "Noto Serif Devanagari", Georgia, serif !important;
 }
-`r`n
+
 .text-gold-lt {
   color: var(--gold-lt) !important;
 }
@@ -70,6 +69,8 @@ a {
   background: linear-gradient(115deg, #6f4305 0%, #a86f08 27%, #d69615 52%, #9a6507 76%, #573503 100%);
   -webkit-background-clip: text;
   background-clip: text;
+  font-weight: 600;
+  -webkit-text-stroke: 0.25px rgba(111, 67, 5, 0.7);
 }
 
 .text-ivory {
@@ -89,7 +90,7 @@ a {
 }
 
 .text-maroon\/70 {
-  color: rgba(36, 91, 58, 0.72) !important;
+  color: rgba(36, 91, 58, 0.7) !important;
 }
 
 .bg-maroon {
@@ -107,29 +108,29 @@ a {
 }
 
 .text-espresso\/55 {
-  color: rgba(90, 48, 40, 0.55) !important;
+  color: rgba(41, 68, 56, 0.55) !important;
 }
 
 .text-espresso\/68 {
-  color: rgba(90, 48, 40, 0.68) !important;
+  color: rgba(41, 68, 56, 0.68) !important;
 }
 
 .text-espresso\/70 {
-  color: rgba(90, 48, 40, 0.7) !important;
+  color: rgba(41, 68, 56, 0.7) !important;
 }
 
 .text-espresso\/72 {
-  color: rgba(90, 48, 40, 0.72) !important;
+  color: rgba(41, 68, 56, 0.72) !important;
 }
 
 .text-espresso\/75 {
-  color: rgba(90, 48, 40, 0.75) !important;
+  color: rgba(41, 68, 56, 0.75) !important;
 }
 
 .opening-signature {
   animation: openingSignatureReveal 2.6s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both !important;
   color: var(--burgundy);
-  filter: drop-shadow(0 7px 16px rgba(20, 43, 32, 0.18));
+  filter: drop-shadow(0 7px 16px rgba(36, 91, 58, 0.18));
   position: relative;
 }
 
@@ -400,7 +401,7 @@ a {
   inset: -1px;
   z-index: -1;
   border-radius: 999px;
-  background: conic-gradient(from 140deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.9), rgba(122, 27, 42, 0.35), rgba(201, 168, 76, 0.2));
+  background: conic-gradient(from 140deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.9), rgba(36, 91, 58, 0.35), rgba(201, 168, 76, 0.2));
   animation: ringTurn 8s linear infinite;
 }
 
@@ -564,13 +565,13 @@ a {
 @keyframes openingSignatureReveal {
   from {
     opacity: 0;
-    filter: blur(8px) drop-shadow(0 7px 16px rgba(20, 43, 32, 0.18));
+    filter: blur(8px) drop-shadow(0 7px 16px rgba(36, 91, 58, 0.18));
     transform: translateY(18px);
   }
 
   to {
     opacity: 1;
-    filter: blur(0) drop-shadow(0 7px 16px rgba(20, 43, 32, 0.18));
+    filter: blur(0) drop-shadow(0 7px 16px rgba(36, 91, 58, 0.18));
     transform: translateY(0);
   }
 }
@@ -726,20 +727,4 @@ a {
     transform: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
