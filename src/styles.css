@@ -1,13 +1,13 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amita:wght@700&family=Kalam:wght@400;700&family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap");
-
+﻿@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Serif+Devanagari:wght@400;500;600&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
+`r`n
 :root {
   --ivory: #faf6ef;
-  --burgundy: #7a1b2a;
-  --burgundy-dk: #2c1810;
+  --burgundy: #245B3A;
+  --burgundy-dk: #142B20;
   --gold: #c9a84c;
   --gold-lt: #b8941f;
-  --blush: #9b2335;
-  --text-mid: #5a3028;
+  --blush: #3F7450;
+  --text-mid: #678171;
   color: var(--text-mid);
   background: #faf6ef;
   font-synthesis: none;
@@ -27,7 +27,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: "EB Garamond", "Noto Sans Devanagari", Georgia, serif;
+  font-family: "EB Garamond", "Noto Serif Devanagari", Georgia, serif;
   background: var(--burgundy-dk);
 }
 
@@ -37,26 +37,26 @@ a {
 }
 
 .font-display {
-  font-family: "Cormorant Garamond", "Noto Sans Devanagari", Georgia, serif !important;
+  font-family: "Cormorant Garamond", "Noto Serif Devanagari", Georgia, serif !important;
 }
 
 .font-label {
-  font-family: "Cinzel", "Noto Sans Devanagari", serif !important;
+  font-family: "Cinzel", "Noto Serif Devanagari", serif !important;
 }
 
 .countdown-heading {
-  font-family: "Cinzel", "Noto Sans Devanagari", serif !important;
+  font-family: "Cinzel", "Noto Serif Devanagari", serif !important;
 }
 
 .font-body {
-  font-family: "EB Garamond", "Noto Sans Devanagari", Georgia, serif !important;
+  font-family: "EB Garamond", "Noto Serif Devanagari", Georgia, serif !important;
 }
 
 .font-signature {
-  font-family: "Amita", "Kalam", "Noto Serif Devanagari", "Alex Brush", "Cormorant Garamond", Georgia, serif !important;
-  font-weight: 700;
+  font-family: "Alex Brush", "Noto Serif Devanagari", "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 600;
 }
-
+`r`n
 .text-gold-lt {
   color: var(--gold-lt) !important;
 }
@@ -89,7 +89,7 @@ a {
 }
 
 .text-maroon\/70 {
-  color: rgba(122, 27, 42, 0.7) !important;
+  color: rgba(36, 91, 58, 0.72) !important;
 }
 
 .bg-maroon {
@@ -97,12 +97,12 @@ a {
 }
 
 .bg-maroon\/40 {
-  background-color: rgba(122, 27, 42, 0.4) !important;
+  background-color: rgba(36, 91, 58, 0.4) !important;
 }
 
 .from-maroon\/75 {
-  --tw-gradient-from: rgba(122, 27, 42, 0.75) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgba(122, 27, 42, 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: rgba(36, 91, 58, 0.75) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(36, 91, 58, 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -129,7 +129,7 @@ a {
 .opening-signature {
   animation: openingSignatureReveal 2.6s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both !important;
   color: var(--burgundy);
-  filter: drop-shadow(0 7px 16px rgba(122, 27, 42, 0.18));
+  filter: drop-shadow(0 7px 16px rgba(20, 43, 32, 0.18));
   position: relative;
 }
 
@@ -143,7 +143,7 @@ a {
 
 .flying-bird {
   animation: birdFlight 18s cubic-bezier(0.45, 0, 0.55, 1) infinite both;
-  filter: drop-shadow(0 8px 14px rgba(44, 24, 16, 0.14));
+  filter: drop-shadow(0 8px 14px rgba(20, 43, 32, 0.14));
   opacity: 1;
   transform: translate3d(30px, 18px, 0) scale(0.78) rotate(-4deg);
 }
@@ -564,13 +564,13 @@ a {
 @keyframes openingSignatureReveal {
   from {
     opacity: 0;
-    filter: blur(8px) drop-shadow(0 7px 16px rgba(122, 27, 42, 0.18));
+    filter: blur(8px) drop-shadow(0 7px 16px rgba(20, 43, 32, 0.18));
     transform: translateY(18px);
   }
 
   to {
     opacity: 1;
-    filter: blur(0) drop-shadow(0 7px 16px rgba(122, 27, 42, 0.18));
+    filter: blur(0) drop-shadow(0 7px 16px rgba(20, 43, 32, 0.18));
     transform: translateY(0);
   }
 }
@@ -726,6 +726,14 @@ a {
     transform: none;
   }
 }
+
+
+
+
+
+
+
+
 
 
 

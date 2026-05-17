@@ -2,8 +2,11 @@
 import { CalendarDays, Heart, MapPin, MessageCircle, Music, Sparkles, Volume2, VolumeX } from "lucide-react";
 
 const h = React.createElement;
-const weddingDate = new Date("2026-06-27T19:00:00+05:30");
+const weddingDate = new Date("2026-06-27T20:00:00+05:30");
 const heroImage = new URL("./assets/opening.jpg", import.meta.url).href;
+const coupleMainImage = new URL("./assets/couple-main.jpeg", import.meta.url).href;
+const coupleHandImage = new URL("./assets/couple-hand.jpeg", import.meta.url).href;
+const coupleRingImage = new URL("./assets/couple-rings-1.jpeg", import.meta.url).href;
 const haldiImage = new URL("./assets/haldi.jpg", import.meta.url).href;
 const mehendiImage = new URL("./assets/mehandi.jpg", import.meta.url).href;
 const weddingImage = new URL("./assets/wedding.jpg", import.meta.url).href;
@@ -15,45 +18,45 @@ const eventImages = [
     date: "25 जून",
     time: "हल्दी की पावन रस्म, स्नेहिल मुस्कानें और मंगल आशीर्वादों से सजी शुभ बेला।",
     image: haldiImage,
-    offset: "pt-32",
+    offset: "pt-40",
   },
   {
     title: "मेहंदी",
-    date: "26 जून",
+    date: "25 जून",
     time: "मेहंदी की रंगत, गीतों की मधुरता और अपनों के संग हर्षोल्लास की सुहानी संध्या।",
     image: mehendiImage,
-    offset: "pt-56",
+    offset: "pt-40",
   },
   {
     title: "विवाह",
     date: "27 जून",
     time: "पवित्र फेरों, मंगल वचनों और दो परिवारों के शुभ मिलन का पावन अवसर।",
     image: weddingImage,
-    offset: "pt-32",
+    offset: "pt-40",
   },
 ];
 
 const eventDetails = [
   {
     title: "हल्दी समारोह",
-    date: "गुरुवार, 25 जून · शाम 4:00 बजे",
-    address: ["बी-3303, स्प्रिंग व्यू फ्लोर्स, सारे होम्स,", "क्रेसेंट पार्क, लाल कुआं, गाजियाबाद 201002"],
+    date: "गुरुवार, 25 जून · सुबह 11:00 बजे",
+    address: ["172/1, आर्य नगर, ब्लॉक-2,", "शिव मंदिर के पास, देहरादून, उत्तराखंड"],
     accent: "gold",
-    directions: "https://www.google.com/maps/search/?api=1&query=28.638583,77.480361",
+    directions: "https://www.google.com/maps/search/?api=1&query=30.340556,78.063806",
   },
   {
     title: "मेहंदी संध्या",
-    date: "शुक्रवार, 26 जून · शाम 6:00 बजे",
-    address: ["बी-3303, स्प्रिंग व्यू फ्लोर्स, सारे होम्स,", "क्रेसेंट पार्क, लाल कुआं, गाजियाबाद 201002"],
+    date: "गुरुवार, 25 जून · शाम 4:00 बजे",
+    address: ["172/1, आर्य नगर, ब्लॉक-2,", "शिव मंदिर के पास, देहरादून, उत्तराखंड"],
     accent: "gold",
-    directions: "https://www.google.com/maps/search/?api=1&query=28.638583,77.480361",
+    directions: "https://www.google.com/maps/search/?api=1&query=30.340556,78.063806",
   },
   {
     title: "विवाह समारोह",
-    date: "शनिवार, 27 जून · रात 8:30 बजे",
-    address: ["UK AURA by VR2H", "मुख्य द्वार, वेव सिटी मार्ग, सादिकपुर, काजीपुरा, गाजियाबाद, उत्तर प्रदेश 201015"],
-    accent: "maroon",
-    directions: "https://www.google.com/maps/search/?api=1&query=UK%20AURA%20by%20VR2H%20Ghaziabad",
+    date: "शनिवार, 27 जून · रात 8:00 बजे",
+    address: ["आनंद भवन", "4, ओल्ड सर्वे रोड, करनपुर,", "देहरादून, उत्तराखंड 248001"],
+    accent: "green",
+    directions: "https://share.google/md5em3FuLxj9JEs7O",
   },
 ];
 
@@ -158,10 +161,8 @@ function Hero() {
       { className: "absolute inset-x-0 top-0 z-10 px-5 py-6 sm:px-8" },
       h(
         "nav",
-        { className: "mx-auto flex items-center justify-between font-label text-[0.65rem] font-medium uppercase tracking-[0.05em] text-espresso" },
-        h("a", { href: "#invitation", className: "transition-colors hover:text-gold" }, "विवाह"),
-        h("span", { className: "font-display text-lg font-light italic normal-case tracking-normal text-maroon" }, "आ · च"),
-        h("a", { href: "#rsvp", className: "transition-colors hover:text-gold" }, "पुष्टि")
+        { className: "mx-auto text-center font-label text-[0.72rem] font-medium tracking-[0.08em] text-maroon" },
+        "॥ ॐ गणेशाय नमः ॥"
       )
     ),
     h(
@@ -169,7 +170,7 @@ function Hero() {
       { className: "absolute inset-x-0 bottom-12 z-10 px-6 text-center" },
       h(
         "p",
-        { className: "opening-signature gold-gradient-text inline-block px-2 py-2 font-signature text-4xl leading-[1.35] tracking-wide" },
+        { className: "opening-signature gold-gradient-text inline-block px-2 py-2 font-signature text-4xl font-semibold leading-[1.35] tracking-wide" },
         "आदेश एवं चंदा"
       )
     ),
@@ -254,20 +255,20 @@ function InvitationDetails() {
         h(
           "div",
           null,
-          h("p", { className: "gold-gradient-text font-signature text-5xl leading-[1.15] drop-shadow-sm" }, "आदेश"),
+          h("p", { className: "gold-gradient-text font-signature text-5xl font-semibold leading-[1.15] drop-shadow-sm" }, "आदेश"),
           h("p", { className: "mt-2 font-body text-sm leading-7 text-text-mid" }, "सुपुत्र", h("br"), "श्री शिव किशोर चौरसिया एवं श्रीमती माया चौरसिया")
         ),
         h(
           "div",
           { className: "flex items-center justify-center gap-4" },
           h("span", { className: "h-px w-12 bg-gold/45" }),
-          h("span", { className: "font-signature text-3xl text-gold-lt" }, "के संग"),
+          h("span", { className: "font-display text-3xl italic text-gold-lt" }, "के संग"),
           h("span", { className: "h-px w-12 bg-gold/45" })
         ),
         h(
           "div",
           null,
-          h("p", { className: "gold-gradient-text font-signature text-5xl leading-[1.15] drop-shadow-sm" }, "चंदा"),
+          h("p", { className: "gold-gradient-text font-signature text-5xl font-semibold leading-[1.15] drop-shadow-sm" }, "चंदा"),
           h("p", { className: "mt-2 font-body text-sm leading-7 text-text-mid" }, "सुपुत्री", h("br"), "श्री विजय कुमार चौरसिया एवं श्रीमती सुशीला चौरसिया"),
           h("span", { className: "mx-auto mt-7 block h-px w-24 bg-[#c9a84c]/55" })
         )
@@ -321,7 +322,36 @@ function Countdown() {
         h("span", null, "मिनट"),
         h("span", null, "सेकंड")
       ),
-      h("p", { className: "mt-12 font-label text-[0.68rem] uppercase tracking-[0.06em] text-text-mid" }, "27 जून · शनिवार · रात 8:30 बजे")
+      h("p", { className: "mt-12 font-label text-[0.68rem] uppercase tracking-[0.06em] text-text-mid" }, "27 जून · शनिवार · रात 8:00 बजे")
+    )
+  );
+}
+
+function CoupleGallery() {
+  return h(
+    Section,
+    { id: "story", className: "bg-ivory text-espresso" },
+    h(
+      "div",
+      { className: "reveal text-cascade text-center" },
+      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" }, "स्मृतियों की झलक"),
+      h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-maroon" }, "प्रेम, विश्वास और एक नई शुरुआत"),
+      h("p", { className: "mx-auto mt-6 max-w-[21rem] font-body text-lg leading-8 text-text-mid" }, "दो परिवारों के आशीर्वाद के बीच, यह साथ अब जीवन भर की सुंदर प्रतिज्ञा बनने जा रहा है।"),
+      h(
+        "div",
+        { className: "mx-auto mt-10 grid max-w-[390px] gap-4" },
+        h("img", {
+          src: coupleMainImage,
+          alt: "आदेश एवं चंदा",
+          className: "gallery-feature h-[clamp(340px,62svh,520px)] w-full rounded-[8px] object-cover object-center shadow-luxury",
+        }),
+        h(
+          "div",
+          { className: "grid grid-cols-2 gap-4" },
+          h("img", { src: coupleHandImage, alt: "युगल के हाथ", className: "h-40 w-full rounded-[8px] object-cover object-center shadow-[0_14px_35px_rgba(20,43,32,0.12)]" }),
+          h("img", { src: coupleRingImage, alt: "अंगूठियों की स्मृति", className: "h-40 w-full rounded-[8px] object-cover object-center shadow-[0_14px_35px_rgba(20,43,32,0.12)]" })
+        )
+      )
     )
   );
 }
@@ -333,13 +363,13 @@ function EventImageSections() {
     h(
       "div",
       { className: "grid gap-5" },
-      eventImages.map((event) =>
-        h(
+      eventImages.map((event) => {
+        return h(
           "article",
           {
             key: event.title,
             className:
-              "relative min-h-[100svh] overflow-hidden rounded-[8px] border border-gold/25 bg-ivory shadow-luxury",
+              "relative mx-auto h-[680px] max-w-[390px] overflow-hidden rounded-[8px] border border-gold/25 bg-ivory shadow-luxury",
           },
           h("img", {
             src: event.image,
@@ -351,13 +381,13 @@ function EventImageSections() {
           h(
             "div",
             { className: `relative z-10 px-7 text-center ${event.offset}` },
-            h(Eyebrow, null, event.date),
+            h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.08em] text-blush" }, event.date),
             h("h3", { className: "mt-2 font-display text-5xl font-light leading-none text-maroon" }, event.title),
             h("div", { className: "mx-auto mt-3 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" }),
-            h("p", { className: "mx-auto mt-0 max-w-[15rem] font-body text-lg italic leading-6 text-text-mid" }, event.time)
+            h("p", { className: "mx-auto mt-2 max-w-[15rem] font-body text-lg italic leading-6 text-text-mid" }, event.time)
           )
-        )
-      )
+        );
+      })
     )
   );
 }
@@ -430,7 +460,7 @@ function RSVP() {
       h(
         "a",
         {
-          href: `https://wa.me/918076156686?text=${message}`,
+          href: `https://wa.me/917030582940?text=${message}`,
           target: "_blank",
           rel: "noreferrer",
           className: "mt-9 inline-flex items-center justify-center gap-3 rounded-[8px] bg-maroon px-8 py-4 font-label text-sm font-medium uppercase tracking-[0.05em] text-ivory shadow-luxury transition duration-300 hover:-translate-y-0.5 hover:bg-espresso",
@@ -446,7 +476,7 @@ function Footer() {
   return h(
     "footer",
     { className: "text-cascade bg-ivory px-5 py-12 text-center sm:px-8" },
-    h("p", { className: "gold-gradient-text font-signature text-4xl leading-[1.2]" }, "आदेश एवं चंदा"),
+    h("p", { className: "gold-gradient-text font-signature text-4xl font-semibold leading-[1.2]" }, "आदेश एवं चंदा"),
     h(
       "div",
       { className: "mx-auto mt-4 flex w-44 items-center justify-center gap-3 text-gold" },
@@ -507,8 +537,15 @@ export default function App() {
     };
   }, []);
 
-  return h(React.Fragment, null, h(MusicPlayer), h(Hero), h("main", null, h(InvitationDetails), h(Countdown), h(EventImageSections), h(Events), h(RSVP)), h(Footer));
+  return h(React.Fragment, null, h(MusicPlayer), h(Hero), h("main", null, h(InvitationDetails), h(Countdown), h(CoupleGallery), h(EventImageSections), h(Events), h(RSVP)), h(Footer));
 }
+
+
+
+
+
+
+
 
 
 
