@@ -44,21 +44,21 @@ const eventImages = [
   {
     title: "हल्दी",
     date: "25 जून",
-    time: "हल्दी की शुभ आभा, स्नेहिल मुस्कानें और मंगल आशीर्वादों से सजी पावन बेला।",
+    time: "हँसी, रंग और अपनों के स्नेह संग\nआइए इस शुभ रस्म की\nखुशियों में शामिल हों।",
     image: haldiImage,
     offset: "pt-40",
   },
   {
     title: "मेहंदी",
     date: "25 जून",
-    time: "मेहंदी की गहरी रंगत, गीतों की मधुरता और अपनों के सान्निध्य से सजी मंगल संध्या।",
+    time: "मेहंदी की रंगत और\nखुशियों की महक संग\nइस शाम को और भी यादगार बनाएं।",
     image: mehendiImage,
     offset: "pt-40",
   },
   {
     title: "विवाह",
     date: "27 जून",
-    time: "अग्नि साक्षी पवित्र फेरों, मंगल वचनों और दो परिवारों के शुभ मिलन का पावन अवसर।",
+    time: "परिवारों के आशीर्वाद और\nप्रियजनों की उपस्थिति में\nहम जीवन के इस नए सफ़र की\nशुभ शुरुआत कर रहे हैं।",
     image: weddingImage,
     offset: "pt-40",
   },
@@ -202,7 +202,7 @@ function InvitationDetails() {
     h(
       "div",
       { className: "invitation-sequence px-4 py-8 text-center" },
-      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.18em] text-blush" }, "आपकी स्नेहिल उपस्थिति का सादर अनुरोध है"),
+      h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.18em] text-blush" }, "प्रेम, विश्वास और परिवारों के आशीर्वाद संग"),
       h(
         "div",
         { className: "mt-9 space-y-7" },
@@ -240,7 +240,7 @@ function CoupleGallery() {
   return h(
     Section,
     { id: "memories", className: "bg-ivory text-espresso" },
-    h("div", { className: "reveal text-cascade text-center" }, h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.28em] text-blush" }, "स्नेहिल क्षण"), h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-maroon" }, "बंधन से पूर्व के मधुर क्षण"), h("p", { className: "mx-auto mt-7 max-w-[20rem] font-body text-lg italic leading-8 text-text-mid" }, "कुछ क्षण शब्दों से नहीं, स्पर्श की गरमाहट, मुस्कान की कोमलता और साथ निभाने के निश्चय से स्मरणीय बनते हैं।")),
+    h("div", { className: "reveal text-cascade text-center" }, h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.28em] text-blush" }, "स्नेहिल क्षण"), h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-maroon" }, "हमारे सफ़र के कुछ सुंदर पल"), h("p", { className: "mx-auto mt-7 max-w-[20rem] font-body text-lg italic leading-8 text-text-mid" }, "कुछ यादें, जो हमें इस खूबसूरत मोड़ तक लाई हैं।")),
     h(
       "div",
       { className: "reveal mt-10 overflow-hidden rounded-[8px] border border-gold/25 bg-white shadow-luxury" },
@@ -262,7 +262,7 @@ function Events() {
   return h(
     Section,
     { id: "events", className: "bg-maroon text-ivory" },
-    h("div", { className: "reveal text-cascade mx-auto max-w-2xl text-center" }, h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.28em] text-gold" }, "शुभ विवाहोत्सव"), h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-ivory" }, "विवाह कार्यक्रम एवं स्थल"), h("p", { className: "mx-auto mt-8 max-w-[20rem] font-body text-lg leading-8 text-ivory" }, "जहां प्रत्येक रस्म गरिमा से सजेगी, हर आशीर्वाद प्रेम से जुड़ेगा और यह शुभ अवसर सुनहरी स्मृति बन जाएगा।")),
+    h("div", { className: "reveal text-cascade mx-auto max-w-2xl text-center" }, h("p", { className: "font-label text-[0.68rem] font-medium uppercase tracking-[0.28em] text-gold" }, "शुभ विवाहोत्सव"), h("h2", { className: "mt-5 font-display text-4xl font-light leading-tight text-ivory" }, "समारोह एवं स्थल"), h("p", { className: "mx-auto mt-8 max-w-[20rem] font-body text-lg leading-8 text-ivory" }, "हमारे जीवन के इस विशेष उत्सव में\nआपकी उपस्थिति हमारे लिए अत्यंत प्रिय होगी।")),
     h("div", { className: "reveal-stagger mt-12 grid gap-5" }, eventDetails.map((event) => h("article", { key: event.title, className: "rounded-[8px] border border-[#c9a84c]/15 border-l-2 border-l-[#c9a84c] bg-[#FAF6EF] px-7 py-8 text-left shadow-[0_18px_45px_rgba(20,43,32,0.08)]" }, h("div", { className: "flex flex-col gap-3" }, h("h3", { className: "font-label text-sm font-medium uppercase tracking-[0.2em] text-blush" }, event.title), h("p", { className: "font-body text-base text-gold-lt" }, event.date)), h("div", { className: "mt-6 space-y-2.5 font-body text-lg leading-8 text-text-mid" }, event.address.map((line) => h("p", { key: line }, line))), h("a", { href: event.directions, target: "_blank", rel: "noreferrer", className: "mt-8 inline-flex items-center gap-2 border-b border-gold/55 pb-1 font-label text-[0.68rem] uppercase tracking-[0.2em] text-blush" }, Icon(MapPin, "", 14), "मार्ग देखें"))))
   );
 }
@@ -273,7 +273,7 @@ function RSVP() {
   return h(
     Section,
     { id: "rsvp", className: "bg-ivory text-espresso" },
-    h("div", { className: "reveal text-cascade mx-auto max-w-3xl rounded-[8px] border border-gold/35 px-5 py-10 text-center shadow-[0_18px_55px_rgba(20,43,32,0.06)]" }, Icon(Heart, "mx-auto text-gold", 34), h("h2", { className: "mt-6 font-display text-4xl font-light leading-tight text-maroon" }, "आपका स्नेहिल आगमन हमारा सौभाग्य होगा।"), h("p", { className: "mx-auto mt-6 max-w-2xl font-body text-lg leading-9 text-text-mid" }, "कृपया अपनी उपस्थिति की पुष्टि कर हमें अनुग्रहित करें, ताकि आपके स्वागत की प्रत्येक व्यवस्था स्नेहपूर्वक पूर्ण की जा सके।"), h("a", { href: `https://wa.me/917030582940?text=${message}`, target: "_blank", rel: "noreferrer", className: "mt-9 inline-flex items-center justify-center gap-3 rounded-[8px] bg-maroon px-8 py-4 font-label text-sm font-medium uppercase tracking-[0.18em] text-ivory shadow-luxury transition duration-300 hover:-translate-y-0.5 hover:bg-espresso" }, h(WhatsAppIcon), "व्हाट्सऐप द्वारा पुष्टि करें"))
+    h("div", { className: "reveal text-cascade mx-auto max-w-3xl rounded-[8px] border border-gold/35 px-5 py-10 text-center shadow-[0_18px_55px_rgba(20,43,32,0.06)]" }, Icon(Heart, "mx-auto text-gold", 34), h("h2", { className: "mt-6 font-display text-4xl font-light leading-tight text-maroon" }, "आपकी स्नेहिल उपस्थिति\nहमारे लिए आशीर्वाद समान होगी।"), h("p", { className: "mx-auto mt-6 max-w-2xl font-body text-lg leading-9 text-text-mid" }, "कृपया अपनी उपस्थिति की पुष्टि कर हमें अनुग्रहित करें, ताकि आपके स्वागत की प्रत्येक व्यवस्था स्नेहपूर्वक पूर्ण की जा सके।"), h("a", { href: `https://wa.me/917030582940?text=${message}`, target: "_blank", rel: "noreferrer", className: "mt-9 inline-flex items-center justify-center gap-3 rounded-[8px] bg-maroon px-8 py-4 font-label text-sm font-medium uppercase tracking-[0.18em] text-ivory shadow-luxury transition duration-300 hover:-translate-y-0.5 hover:bg-espresso" }, h(WhatsAppIcon), "व्हाट्सऐप द्वारा पुष्टि करें"))
   );
 }
 
@@ -283,6 +283,7 @@ function Footer() {
     { className: "text-cascade bg-ivory px-5 py-12 text-center sm:px-8" },
     h("p", { className: "gold-gradient-text font-signature text-4xl font-semibold leading-[1.2]" }, "आदेश एवं चंदा"),
     h("div", { className: "mx-auto mt-4 flex w-44 items-center justify-center gap-3 text-gold" }, h("span", { className: "h-px flex-1 bg-[#c9a84c]/65" }), h("span", { className: "font-label text-[0.68rem] leading-none text-[#c9a84c]/80" }, "★"), h("span", { className: "h-px flex-1 bg-[#c9a84c]/65" })),
+    h("p", { className: "mt-5 font-label text-[0.68rem] uppercase tracking-[0.18em] text-gold-lt" }, "सपरिवार सादर आमंत्रित"),
     h("p", { className: "mx-auto mt-4 max-w-2xl font-body text-lg font-normal leading-8 text-text-mid" }, "समस्त परिवार के आशीर्वाद सहित, हम आपको पवित्र वचनों, मंगल परंपराओं और प्रेम से आलोकित इस शुभ विवाहोत्सव में सादर आमंत्रित करते हैं।")
   );
 }
@@ -327,4 +328,15 @@ export default function App() {
 
   return h(React.Fragment, null, h(MusicPlayer), h(Hero), h("main", null, h(InvitationDetails), h(Countdown), h(CoupleGallery), h(EventImageSections), h(Events), h(RSVP)), h(Footer));
 }
+
+
+
+
+
+
+
+
+
+
+
 
